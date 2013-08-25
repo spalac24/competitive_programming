@@ -1,0 +1,8 @@
+FILRTEST.c: In function ‘kmp’:
+FILRTEST.c:15:17: error: expected ‘)’ before ‘and’
+     while(j > 0 and s[i] != s[j]) j = arr[j];
+                 ^
+FILRTEST.c: In function ‘main’:
+FILRTEST.c:27:5: warning: ‘gets’ is deprecated (declared at /usr/include/stdio.h:638) [-Wdeprecated-declarations]
+     gets(s);
+     ^

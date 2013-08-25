@@ -1,39 +1,34 @@
-#include <iostream>
-#include <cstdio>
 #include <cstring>
 #include <cstdio>
+#include <cstdlib>
 
-using namespace std;
 
-int arr [2000000];
-char s [2000000];
+int arr [1500000];
+char s [1500000]; 
 int size;
 
 void kmp () {
   arr [0] = 0;
-  for (int i = 1; i < size; ++i) {
-    int j = arr[i-1];
-    while(j > 0 and s[i] != s[j]) j = arr[j];
-    if (s[i] == s[j]) j++;
-    arr[i] = j;
+  int i,j;
+  for (i = 2, j = 0; i <= size;) {
+    if (s[i-1]==s[j]) arr[i++] = ++j; else if (j > 0) j = arr[j]; else arr[i++] = 0;
   }
 }
+
 
 int main () {
   int n;
   while(scanf("%d",&n)) {
-    scanf("%s",s);
     if (n == -1) break;
+    gets(s);
     size = strlen(s);
-    
-
     if (n < size) {
-      printf("0\n");
       continue;
     }
     kmp();
-    int len = size-arr[size-1];
-    n -= size;
-    printf("%d\n",((n/len)+1));
+    int len = size-arr[size];
+
+    //    printf("len = %d\n",len);
+    printf("%d\n",(((n-size)/len)+1));
   }
 }
