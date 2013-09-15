@@ -1,0 +1,17 @@
+1 1
+icpc
+pic
+4 3
+sequioia
+march
+may
+tree
+ae
+aeiou
+acm
+
+2 2
+iiiaa
+aaii
+iii
+iiaa
