@@ -51,7 +51,6 @@ struct MCMF {
             for (x = 0; x < N; x++) prev[x] = -1;
             for (x = 0; x < N; ++x) dist[x] = INF;
             dist[s] = prev[s] = 0;
-
             set<pair<ctype,int> > Q;
             Q.insert(make_pair(dist[s],s));
             while(!Q.empty()) {
